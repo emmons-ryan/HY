@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <head>
 	<link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+	<link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	<link href="{% static 'style.css' %}" rel="stylesheet">
 	<title>HabitatYou</title>
 </head>
@@ -17,6 +18,11 @@
     		</div>
   		</div>
 	</nav>
+	<div>
+	{% if user.is_authenticated %}
+   	<h1><a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></h1>
+	{% endif %}   
+   </div>
 <main class="container">
 {% block content %}
 {% endblock %}

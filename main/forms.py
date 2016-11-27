@@ -1,7 +1,7 @@
 from django import forms
-from .models import Users
+from .models import Post
 
-class Users(forms.ModelForm):
+class PostForm(forms.ModelForm):
     class Meta:
-        model = Users
-        fields = ['name']
+        model = Post
+        fields = ('title', 'text',)
