@@ -2,4 +2,11 @@
 {% load staticfiles %}
 {% block content %}
 <h1>Post List</h1>
+{% for post in posts %}
+	<div>
+		<p>Published: {{ post.published_date }}</p>
+		<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+		<p>{{ post.text|linebreaksbr }}</p>
+	</div>
+{% endfor %}
 {% endblock %}
